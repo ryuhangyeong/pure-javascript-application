@@ -45,3 +45,16 @@ console.log(parent.outerHTML);
 5. replaceNode
 6. DOM 조작
 7. 브라우저 렌더링
+
+## 코드 리뷰
+
+성능 최적화 방법
+
+1. `requestAnimationFrame`
+2. 가상 노드 조작
+   기존 노드를 clone하고 조작하므로 기존 원본 DOM에는 영향이 없이 변경사항이 한꺼번에 반영된다.
+
+개선사항
+
+- 하나의 거대한 함수 나누기
+  여러 DOM을 조작하는 함수나 단지 하나이다. 역할별로 나눠서 구현해보자.
