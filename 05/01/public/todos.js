@@ -1,4 +1,5 @@
-import httpXhr from "./http/xhr.js";
+// import http from "./http/xhr.js";
+import http from "./http/fetch.js";
 
 const HEADERS = {
   "Context-Type": "application/json",
@@ -6,7 +7,7 @@ const HEADERS = {
 
 const BASE_URL = "/api/todos";
 
-const list = () => httpXhr.get(BASE_URL);
+const list = () => http.get(BASE_URL);
 
 const create = (text) => {
   const todo = {
@@ -14,17 +15,17 @@ const create = (text) => {
     completed: false,
   };
 
-  return httpXhr.post(BASE_URL, todo, HEADERS);
+  return http.post(BASE_URL, todo, HEADERS);
 };
 
 const update = (newTodo) => {
   const url = `${BASE_URL}/${newTodo.id}`;
-  return httpXhr.patch(url, newTodo, HEADERS);
+  return http.patch(url, newTodo, HEADERS);
 };
 
 const deleteTodo = (id) => {
   const url = `${BASE_URL}/${id}`;
-  return httpXhr.delete(url, HEADERS);
+  return http.delete(url, HEADERS);
 };
 
 export default {
