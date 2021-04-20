@@ -1,5 +1,6 @@
 // import http from "./http/xhr.js";
-import http from "./http/fetch.js";
+// import http from "./http/fetch.js";
+import http from "./http/axios.js";
 
 const HEADERS = {
   "Context-Type": "application/json",
